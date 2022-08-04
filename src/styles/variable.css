@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    /*  colors */
+    --admin-login-background-color: #1E1E30;
+    --admin-login-button-color: #C035A2;
+    --background-input-container: #38394E;
+    --admin-welcome-and-input-color: #C7C7C7;
+    --admin-input-background-color: #5A5B70;
+    --admin-image-background-color: #FFFEFE;
+    --admin-navigation-background-color: #C74FEB;
+    --admin-panel-different-background: #27283C;
+    --color-white: #FFFFFF;
+
+    /* fonts */
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-open-sans: 'Open Sans', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+}

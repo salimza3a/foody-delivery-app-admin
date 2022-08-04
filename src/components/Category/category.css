@@ -1,0 +1,20 @@
+@import url('../../styles/variable.css');
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 33px;
+}
+
+.category-header h2 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--font-roboto);
+    color: var(--color-white)
+}
+
+.add-category-btn {
+    background-color: transparent;
+    border: transparent;
+}

@@ -1,0 +1,50 @@
+.cardItem {
+    width: 196px;
+    height: 273px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    position: relative;
+    margin: 10px;
+}
+
+.cardItem img {
+    width: 80%;
+    max-width: 160px;
+
+}
+
+.cardItem h3 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--font-roboto);
+    color: #1e1e30;
+    margin-top: 10px;
+}
+
+.cardItem p {
+    font-size: 12px;
+    color: #8E8E93;
+    font-family: var(--font-roboto);
+    font-weight: 500;
+
+}
+
+.cardItem span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #00B2A9;
+
+}
+
+.rubbishBin {
+    width: 25px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 25px;
+    right: 10px;
+}

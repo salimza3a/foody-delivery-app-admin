@@ -1,0 +1,126 @@
+@import url('../../styles/variable.css');
+
+.formContainer {
+    background-color: var(--background-input-container);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.formContainer>h2 {
+    font-size: 25px;
+    font-weight: 500;
+    font-family: var(--font-roboto);
+    color: #C7C7C7;
+}
+
+.uploadSection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.uploadFile {
+    width: 70%;
+    height: 122px;
+    background-color: #43445A;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadFile>p {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--font-roboto);
+    color: #C7C7C7;
+}
+
+.uploadSection>p {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-roboto);
+    color: #C7C7C7
+}
+
+
+.formSection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.formSection h2 {
+    font-size: 18px;
+    font-family: var(--font-roboto);
+    font-weight: 500;
+    color: #C7C7C7;
+    width: 27%;
+}
+
+.formElements {
+    background-color: #43445A;
+    border-radius: 14px;
+    width: 70%;
+    height: auto;
+    overflow: auto;
+    padding: 22px;
+
+}
+
+.label {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-roboto);
+    color: #C7C7C7;
+    margin-bottom: 12px;
+}
+
+.inputStyle {
+    border-radius: 14px !important;
+    background-color: #5A5B70 !important;
+    border: transparent !important;
+    padding: 10px !important;
+    margin-bottom: 25px;
+}
+
+.inputStyle::placeholder {
+    font-size: 16px;
+    font-family: var(--font-roboto);
+    font-weight: 500;
+    color: #c7c7c7 !important;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 5%;
+
+}
+
+.actionButtons button {
+    font-size: 18px;
+    font-family: var(--font-roboto);
+    align-items: center;
+    font-weight: 700;
+    border-radius: 14px;
+    box-shadow: 0px 4px 4px 0px #27AE6033;
+    width: 47%;
+    color: #ffffff;
+    border: transparent;
+    padding: 9px 0;
+}
+
+.cancelBtn {
+    background-color: #38394E;
+}
+
+.createBtn {
+    background-color: #C035A2;
+}

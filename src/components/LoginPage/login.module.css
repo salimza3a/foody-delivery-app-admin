@@ -1,0 +1,271 @@
+@import url('../../styles/variable.css');
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+
+
+body {
+    background-color: var(--admin-login-background-color)
+}
+
+
+.logoImage {
+    margin-top: 5.7rem;
+    margin-left: 3.2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 95vw;
+
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.formInputContainer {
+    background-color: var(--background-input-container);
+    width: min(30%, 830px);
+
+    border-radius: 5px 0 0 5px;
+}
+
+.formElements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 100%;
+
+}
+
+.formElements h2 {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    color: var(--admin-welcome-and-input-color);
+    font-size: 35px;
+
+
+}
+
+.formElements input {
+    width: 100%;
+    margin-bottom: 3rem;
+    height: 5rem;
+    background-color: var(--admin-input-background-color);
+    color: var(--admin-welcome-and-input-color);
+    font-family: var(--font-roboto);
+    font-weight: 400;
+    border: transparent;
+    border-radius: 4px;
+    font-size: 18px;
+
+
+}
+
+.formElements button {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    color: var(--color-white);
+    font-family: var(--font-roboto);
+    font-size: 2.5rem;
+    border: transparent;
+    border-radius: 4px;
+    background-color: var(--admin-login-button-color);
+    font-weight: 500;
+
+}
+
+
+
+.languageButton {
+    height: 5.5rem;
+    background-color: white;
+    border-radius: 0 5px 0 0;
+    width: auto;
+}
+
+
+.formImage {
+    background-color: var(--admin-image-background-color);
+    padding: 0 4.7rem 4.7rem 4.7rem;
+    border-radius: 0 0 5px 0;
+}
+
+.formImage img {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+/* Media query */
+
+
+
+
+@media (max-width:650px) {
+
+
+    .formContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 3rem;
+    }
+
+    .formInputContainer {
+        width: 80%;
+        height: 45%;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .formElements h2 {
+        font-size: 25px;
+
+
+    }
+
+    .formElements input {
+        width: 100%;
+        margin-bottom: 3rem;
+        height: 5rem;
+        font-size: 18px;
+
+
+    }
+
+    .formElements button {
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 2.5rem;
+    }
+
+    .languageButton {
+        height: 5.5rem;
+        display: flex;
+        background-color: transparent;
+        justify-content: flex-end;
+    }
+
+
+
+
+    .formImage {
+        background-color: transparent;
+        padding: 0 4.7rem 4.7rem 4.7rem;
+        border-radius: 0 0 5px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .formImage img {
+        width: 80%;
+        height: 80%;
+    }
+
+}
+
+@media (max-width: 960px) {
+
+
+    .formInputContainer {
+        width: 80%;
+        height: 40%;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .formElements h2 {
+        font-size: 25px;
+
+
+    }
+
+    .formElements input {
+        width: 100%;
+        margin-bottom: 2rem;
+        font-size: 20px;
+
+
+    }
+
+    .formElements button {
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 2.5rem;
+    }
+
+
+
+    .languageButton {
+        height: 5.5rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+
+
+    .formImage {
+        padding: 0 4.7rem 4.7rem 4.7rem;
+        border-radius: 0 0 5px 0;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .formImage img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .formInputContainer {
+        width: 35vw;
+        height: auto;
+    }
+
+    .formElements h2 {
+        font-size: 35px;
+
+
+    }
+
+    .formElements input {
+        font-size: 23px;
+        margin-bottom: 3.5rem;
+
+    }
+
+    .formElements button {
+        font-size: 25px;
+        margin-bottom: 0;
+    }
+
+
+
+    .languageButton {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+
+
+
+
+}

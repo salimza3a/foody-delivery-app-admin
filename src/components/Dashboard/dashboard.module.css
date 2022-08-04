@@ -1,0 +1,94 @@
+@import url('../../styles/variable.css');
+
+body {
+    overflow: hidden;
+}
+
+.firstGroup {
+    display: flex;
+    justify-content: space-between;
+    height: 47vh;
+}
+
+.orders {
+    width: 41.5%;
+
+    background-color: var(--admin-panel-different-background);
+    border-radius: 16px;
+    margin-right: 3rem;
+}
+
+.totalSalary {
+    width: 55.8%;
+
+    background-color: var(--admin-panel-different-background);
+    border-radius: 14px;
+
+}
+
+
+.lastGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+    height: 39vh;
+}
+
+/* Chart  */
+.chart {
+    width: 20vw;
+    max-width: 40rem;
+    min-width: 28rem;
+    height: 15vh;
+    margin: 0 auto;
+}
+
+/* Area Chart */
+.totalSalary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.assignedRisks {
+    width: 55.2%;
+
+    border-radius: 14px;
+    background-color: var(--admin-panel-different-background);
+
+}
+
+.actionItems {
+    width: 40.9%;
+
+    border-radius: 14px;
+    background-color: var(--admin-panel-different-background);
+
+}
+
+
+.assignedRisks h2,
+.actionItems h2,
+.orders h2 {
+    font-family: var(--font-roboto);
+    font-size: 20px;
+    line-height: 2;
+    font-weight: 500;
+    margin-left: 32px;
+    color: #C7C7C7
+}
+
+.assignedRisks p,
+.actionItems p {
+    font-family: var(--font-roboto);
+    font-weight: 400;
+    color: #C7C7C7;
+    font-size: 12px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+
+
+}
