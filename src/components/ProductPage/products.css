@@ -40,11 +40,14 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 15px;
+    height: 70vh;
+    overflow-y: auto;
+
 }
 
 
 .productPagination {
-    margin-top: 10%;
+    margin-top: auto;
     display: flex;
     justify-content: center;
 

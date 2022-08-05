@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "category": "pizza",
+        "name": "Sicilian",
+        "restaurant": "Papa John's",
+        "image_url": "https://img.delicious.com.au/xS9E2Q24/del/2016/08/sicilian-pizza-34735-1.jpg",
+        "price": "10$"
+    },
+    {
+        "id": 2,
+        "category": "pizza",
+        "name": "Detroit",
+        "restaurant": "Domino's Pizza",
+        "image_url": "https://www.seriouseats.com/thmb/c5zjXZUhBcVcmSQC-sblxuQAjIk=/1125x1125/smart/filters:no_upscale()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2017__02__20170216-detroit-style-pizza-47-1500x1125-1-233d75e6021048b3bf3cf28bd59d310b.jpg",
+        "price": "13$"
+    },
+    {
+        "id": 3,
+        "category": "pizza",
+        "name": "Neapolitan",
+        "restaurant": "Papa John's",
+        "image_url": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image_2x/public/2020-07/weeknight-neapolitan-style-pizza.jpg?itok=6YuvRc0x",
+        "price": "9$"
+    },
+    {
+        "id": 4,
+        "category": "fast food",
+        "name": "Cheeseburger",
+        "restaurant": "McDonald's",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cheeseburger.jpg/1200px-Cheeseburger.jpg",
+        "price": "8$"
+    },
+    {
+        "id": 5,
+        "category": "fast food",
+        "name": "Fried Chicken",
+        "restaurant": "Burger King",
+        "image_url": "https://dropndine.com/admin//public/images/1627305916114e585ec42f47dea9d3587dd735a96fb26.jpg",
+        "price": "15$"
+    },
+    {
+        "id": 6,
+        "category": "fast food",
+        "name": "Hot dog",
+        "restaurant": "Burger King",
+        "image_url": "https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://cf-images.us-east-1.prod.boltdns.net/v1/static/1033249144001/7d24d0c0-dbfa-419b-b3f1-f0c431e5c237/f90cf1ae-f1c4-472c-86c6-a168900bc333/1280x720/match/image.jpg&w=640&h=360&q=90&c=cc",
+        "price": "15$"
+    },
+    {
+        "id": 7,
+        "category": "drink",
+        "name": "Americano",
+        "restaurant": "Starbucks",
+        "image_url": "https://cdn.buttercms.com/resize=width:750/AB7ud4YSE6nmOX0iGlgA",
+        "price": "5$"
+    },
+    {
+        "id": 8,
+        "category": "drink",
+        "name": "Cappucino",
+        "restaurant": "Starbucks",
+        "image_url": "https://www.tasteofhome.com/wp-content/uploads/2018/01/exps37407_THE1213734_37407_WEB.jpg?fit=700,1024",
+        "price": "7$"
+    },
+    {
+        "id": 9,
+        "category": "drink",
+        "name": "Carbonated water",
+        "restaurant": "Starbucks",
+        "image_url": "https://media.istockphoto.com/photos/carbonated-water-on-wood-grain-background-picture-id1186624437?k=20&m=1186624437&s=612x612&w=0&h=hqfuwwEQqhe91zxXANO6V-5dwYrPwXA5wT2cEm4D_IE=",
+        "price": "2$"
+    },
+    {
+        "id": 10,
+        "category": "drink",
+        "name": "still water",
+        "restaurant": "McDonald's",
+        "image_url": "https://www.juicebuff.com/wp-content/uploads/2019/06/Pouring-Water-For-Juice.jpg",
+        "price": "1.5$"
+    }
+]

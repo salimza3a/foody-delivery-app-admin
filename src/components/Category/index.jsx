@@ -1,8 +1,8 @@
 import "./category.css";
 import MainDrawer from "../../features/Drawer";
 import CategoryDrawer from "../../features/CategoryDrawer";
-import TablePaginationActions from "./category-table";
-function Category() {
+import CategoryTable from "./CategoryTable/category-table";
+function CategoryPage() {
   return (
     <>
       <div className="category-container">
@@ -13,11 +13,11 @@ function Category() {
           </button>
         </div>
         <div className="category-main">
-          <TablePaginationActions />
+          <CategoryTable />
         </div>
       </div>
     </>
   );
 }
 
-export default Category;
+export default CategoryPage;

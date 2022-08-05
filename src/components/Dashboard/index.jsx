@@ -1,7 +1,7 @@
 import DashBoardStyle from "./dashboard.module.css";
 import { DoughnutChart } from "./doughnut";
 import { AreaChart } from "./area-chart";
-function DashBoard() {
+function DashBoardPage() {
   return (
     <>
       <div className={DashBoardStyle.container}>
@@ -31,4 +31,4 @@ function DashBoard() {
   );
 }
 
-export default DashBoard;
+export default DashBoardPage;

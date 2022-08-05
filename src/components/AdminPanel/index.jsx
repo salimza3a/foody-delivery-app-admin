@@ -8,12 +8,16 @@ import Category from "../../images/icons/category.svg";
 import Orders from "../../images/icons/orders.svg";
 import Offer from "../../images/icons/offer.svg";
 import Logout from "../../images/icons/logout.svg";
-// import DashBoard from "../Dashboard";
-// import ProductPage from "../ProductPage";
-import CategoryPage from "../Category";
-import RestaurantPage from "../Restaurants";
 import MainDrawer from "../../features/Drawer";
 import AddProductDrawer from "../../features/ProductDrawer";
+import { NavLink, Routes, Route } from "react-router-dom";
+import DashBoardPage from "../Dashboard";
+import ProductsPage from "../ProductPage";
+import CategoryPage from "../Category";
+import RestaurantPage from "../Restaurants";
+import OrderPage from "../Orders";
+import OfferPage from "../Offers";
+import LoginPage from "../LoginPage";
 function AdminPanel(props) {
   return (
     <>
@@ -50,34 +54,53 @@ function AdminPanel(props) {
                 <div className={AdminStyle.navigation}>
                   <ul>
                     <li>
-                      <img src={Dashboard} alt="dasbhoard link" />
-                      DashBoard
+                      <img src={Dashboard} alt="dashboard link" />
+                      <NavLink className="nav-link" to="/dashboard">
+                        Dashboard{" "}
+                      </NavLink>
                     </li>
                     <li>
                       {" "}
                       <img src={Products} alt="products link" />
-                      Products
+                      <NavLink className="nav-link" to="/products">
+                        Products{" "}
+                      </NavLink>
                     </li>
                     <li>
                       {" "}
                       <img src={Restaurants} alt="restaurants link" />{" "}
-                      Restaurants
+                      <NavLink className="nav-link" to="/restaurants">
+                        Restaurants{" "}
+                      </NavLink>
                     </li>
                     <li>
                       {" "}
-                      <img src={Category} alt="category link" /> Category
+                      <img src={Category} alt="category link" />{" "}
+                      <NavLink className="nav-link" to="/category">
+                        Category{" "}
+                      </NavLink>
                     </li>
                     <li>
                       {" "}
-                      <img src={Orders} alt="orders link" /> Orders
+                      <img src={Orders} alt="orders link" />{" "}
+                      <NavLink className="nav-link" to="/orders">
+                        {" "}
+                        Orders{" "}
+                      </NavLink>
                     </li>
                     <li>
                       {" "}
-                      <img src={Offer} alt="offer link" /> Offer
+                      <img src={Offer} alt="offer link" />{" "}
+                      <NavLink className="nav-link" to="/offer">
+                        Offer{" "}
+                      </NavLink>
                     </li>
                     <li>
                       {" "}
-                      <img src={Logout} alt="logout link" /> Logout
+                      <img src={Logout} alt="logout link" />{" "}
+                      <NavLink className="nav-link" to="/login">
+                        Logout{" "}
+                      </NavLink>
                     </li>
                   </ul>
                 </div>
@@ -88,7 +111,15 @@ function AdminPanel(props) {
             </div>
           </div>
           <div className={AdminStyle.content}>
-            <CategoryPage />
+            <Routes>
+              <Route path="/dashboard" element={<DashBoardPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/restaurants" element={<RestaurantPage />} />
+              <Route path="/category" element={<CategoryPage />} />
+              <Route path="/orders" element={<OrderPage />} />
+              <Route path="/offer" element={<OfferPage />} />
+              <Route path="/login" element={<LoginPage />} />
+            </Routes>
           </div>
         </div>
       </div>
