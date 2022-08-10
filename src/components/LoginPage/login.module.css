@@ -110,7 +110,14 @@ main {
     max-width: 100%;
 }
 
-
+.errorMessage {
+    margin-bottom: 2rem;
+    padding: 3px;
+    border-radius: 14px;
+    font-size: 18px;
+    color: rgb(200, 144, 41);
+    font-weight: 600;
+}
 
 /* Media query */
 

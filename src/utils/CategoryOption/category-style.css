@@ -1,0 +1,15 @@
+@import url("../../styles//variable.css");
+
+.productOption {
+    width: 200px;
+    min-width: 100px;
+    max-height: 35px;
+    border-radius: 14px;
+    background-color: #5a5b70;
+    border: transparent;
+    color: #f2f2f2;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 18px;
+    font-family: var(--font-roboto);
+}

@@ -1,0 +1,13 @@
+.MuiButtonBase-root {
+    border: 1px solid #EC5CF8 !important;
+    color: white !important;
+    font-size: 18px !important;
+    width: 64px;
+    height: 64px !important;
+    border-radius: 50% !important;
+    margin: 0 7px !important;
+}
+
+.css-1j4k3n5-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #EC5CF8 !important;
+}

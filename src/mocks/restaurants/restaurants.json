@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "restaurant": "McDonald’s",
+        "food-name": "hamburger",
+        "restaurant_image": "https://1000logos.net/wp-content/uploads/2017/03/McDonalds-logo.png",
+        "category": "fast food"
+    },
+    {
+        "id": 2,
+        "restaurant": "Subway",
+        "food-name": "salat",
+        "restaurant_image": "https://i.pinimg.com/originals/b1/0e/8a/b10e8a948e61b89603562fe4ee37a9d6.png",
+        "category": "vegetables"
+    },
+    {
+        "id": 3,
+        "restaurant": "Starbucks",
+        "food-name": "espresso",
+        "restaurant_image": "https://i.pinimg.com/originals/15/a1/0b/15a10bcc2406f1b33749e95936920b6c.jpg",
+        "category": "drink"
+    },
+    {
+        "id": 4,
+        "restaurant": "KFC",
+        "food-name": "fried chicken",
+        "restaurant_image": "https://image.pngaaa.com/666/1450666-middle.png",
+        "category": "meat"
+    },
+    {
+        "id": 5,
+        "restaurant": "Burger King",
+        "food-name": "sandwich",
+        "restaurant_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png",
+        "category": "fast food"
+    },
+    {
+        "id": 6,
+        "restaurant": "Pizza Hut",
+        "food-name": "pizza",
+        "restaurant_image": "https://upload.wikimedia.org/wikipedia/sco/thumb/d/d2/Pizza_Hut_logo.svg/2177px-Pizza_Hut_logo.svg.png",
+        "category": "pizza"
+    },
+    {
+        "id": 7,
+        "restaurant": "Domino’s",
+        "food-name": "pizza",
+        "restaurant_image": "https://seeklogo.com/images/D/dominos-pizza-logo-3C4574E20F-seeklogo.com.png",
+        "category": "pizza"
+    },
+    {
+        "id": 8,
+        "restaurant": "Dunkin’ Donuts",
+        "food-name": "donut",
+        "restaurant_image": "https://toppng.com/uploads/preview/dunkin-donuts-eps-vector-logo-free-download-11574243719ujutzoaiov.png",
+        "category": "donut"
+    },
+    {
+        "id": 9,
+        "restaurant": "Taco Bell",
+        "food-name": "taco",
+        "restaurant_image": "https://toppng.com/uploads/preview/taco-bell-logo-trans-2018-taco-bell-logo-11563025570qm8valrvx0.png",
+        "category": "taco"
+    },
+    {
+        "id": 10,
+        "restaurant": "Dairy Queen",
+        "food-name": "hamburger",
+        "restaurant_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dairy_Queen_logo.svg/1024px-Dairy_Queen_logo.svg.png",
+        "category": "fast food"
+    }
+]

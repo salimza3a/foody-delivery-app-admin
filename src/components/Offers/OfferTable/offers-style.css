@@ -1,0 +1,19 @@
+.MuiTableRow-root {
+    text-align: center;
+}
+
+.header-cell {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cell-style {
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.offers-table-bin {
+    background-color: transparent;
+    border: transparent;
+}

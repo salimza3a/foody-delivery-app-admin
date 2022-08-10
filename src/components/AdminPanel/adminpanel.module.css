@@ -103,7 +103,12 @@ body {
 
 }
 
-
+.logOutBtn {
+    background-color: transparent;
+    border: transparent;
+    color: #f2f2f2;
+    font-weight: 500;
+}
 
 .navigation li:hover {
     background-color: #CD61ED
@@ -125,6 +130,7 @@ body {
     font-size: 25px;
     color: #f2f2f2;
 
+
 }
 
 .content {
@@ -132,5 +138,4 @@ body {
     height: 90vh;
     margin-left: 16px;
     margin-top: 16px;
-    background-color: rgb(196, 177, 80);
 }

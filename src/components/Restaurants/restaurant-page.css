@@ -5,6 +5,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 33px;
+    background-color: #27283C;
+    border-radius: 14px;
+    height: 73px;
 }
 
 .restaurant-container {
@@ -17,23 +20,15 @@
     font-size: 20px;
     font-family: var(--font-roboto);
     color: #f2f2f2;
+
 }
 
 .right-side-items {
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
 }
 
-.restaurantOptions {
-    font-size: 14px;
-    font-family: var(--font-roboto);
-    width: 199px;
-    height: 35px;
-    border-radius: 14px;
-    background-color: #5a5b70;
-    border: transparent;
-    color: #f2f2f2
-}
+
 
 .food-company-container {
     display: flex;

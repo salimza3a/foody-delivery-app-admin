@@ -5,6 +5,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 33px;
+    border-radius: 14px;
+    background-color: #27283C;
 }
 
 .category-header h2 {
