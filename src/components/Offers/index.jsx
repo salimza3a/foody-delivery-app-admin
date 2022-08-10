@@ -2,20 +2,24 @@ import "./offer-style.css";
 import MainDrawer from "../../features/Drawer";
 import OffersDrawer from "../../features/OffersDrawer";
 import OffersTable from "./OfferTable";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { deleteOffersApi, getOffersApi } from "../../api/offers";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
+import { useSelector, useDispatch } from "react-redux";
+
+import { setOfferData } from "../../store/slice/offerSlice";
 function OfferPage() {
-  const [offersData, setOffersData] = useState([]);
+  const offerState = useSelector((state) => state.offer.offerData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getOffers();
   }, []);
 
   function getOffers() {
-    getOffersApi.then((res) => setOffersData(res.data.offers));
+    getOffersApi.then((res) => dispatch(setOfferData([...res.data.offers])));
   }
 
   function deleteTableValue(id) {
@@ -30,9 +34,8 @@ function OfferPage() {
     }).then((result) => {
       if (result.isConfirmed) {
         deleteOffersApi(id).then((res) => {
-          console.log(id);
-          const newArr = offersData.filter((item) => item.id !== id);
-          setOffersData(newArr);
+          const newArr = offerState.filter((item) => item.id !== id);
+          dispatch(setOfferData(newArr));
         });
         toast.success("deleted successfully", {
           position: "top-right",
@@ -58,7 +61,7 @@ function OfferPage() {
         </div>
 
         <div className="offers-main">
-          <OffersTable data={offersData} deleteValue={deleteTableValue} />
+          <OffersTable data={offerState} deleteValue={deleteTableValue} />
         </div>
       </div>
       <ToastContainer />

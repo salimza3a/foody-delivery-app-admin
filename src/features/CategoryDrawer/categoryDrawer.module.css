@@ -79,6 +79,7 @@
     font-family: var(--font-roboto);
     color: #C7C7C7;
     margin-bottom: 12px;
+    display: block;
 }
 
 .inputStyle {
@@ -87,6 +88,8 @@
     border: transparent !important;
     padding: 10px !important;
     margin-bottom: 25px;
+    color: #c7c7c7 !important;
+    font-size: 16px !important;
 }
 
 .inputStyle::placeholder {
@@ -104,6 +107,8 @@
 
 }
 
+
+
 .actionButtons button {
     font-size: 18px;
     font-family: var(--font-roboto);
@@ -115,6 +120,14 @@
     color: #ffffff;
     border: transparent;
     padding: 9px 0;
+}
+
+.drawerError {
+    font-size: 18px;
+    color: rgb(161, 109, 13);
+    font-weight: 600;
+    text-align: center;
+    border-radius: 14px;
 }
 
 .cancelBtn {

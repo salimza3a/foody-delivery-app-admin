@@ -8,6 +8,14 @@ mock.onGet("/offers").reply((config) => {
   });
 });
 
+mock.onPost("/offers").reply((config) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([201, { message: "Created" }, JSON.parse(config.data)]);
+    }, 2000);
+  });
+});
+
 mock.onDelete(/\/offers\/\d+/).reply((config) => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -17,5 +25,5 @@ mock.onDelete(/\/offers\/\d+/).reply((config) => {
 });
 
 export const getOffersApi = axiosMock.get("/offers");
-
+export const createOffersApi = (item) => axiosMock.post(`/offers`, item);
 export const deleteOffersApi = (id) => axiosMock.delete(`/offers/${id}`);

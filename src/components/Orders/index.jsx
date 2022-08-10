@@ -5,15 +5,18 @@ import { deleteOrdersApi, getOrdersApi } from "../../api/orders";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-function OrderPage() {
-  const [ordersValues, setOrdersValues] = useState([]);
 
+import { useSelector, useDispatch } from "react-redux";
+import { setOrdersData } from "../../store/slice/orderSlice";
+function OrderPage() {
+  const orderState = useSelector((state) => state.order.ordersData);
+  const dispatch = useDispatch();
   useEffect(() => {
     getOrders();
   }, []);
 
   function getOrders() {
-    getOrdersApi.then((res) => setOrdersValues(res.data.orders));
+    getOrdersApi.then((res) => dispatch(setOrdersData(res.data.orders)));
   }
 
   function deleteOrderItem(id) {
@@ -28,8 +31,8 @@ function OrderPage() {
     }).then((result) => {
       if (result.isConfirmed) {
         deleteOrdersApi(id).then((res) => {
-          const newArr = ordersValues.filter((item) => item.id !== id);
-          setOrdersValues(newArr);
+          const newArr = orderState.filter((item) => item.id !== id);
+          dispatch(setOrdersData(newArr));
         });
         toast.success("deleted successfully", {
           position: "top-right",
@@ -51,7 +54,7 @@ function OrderPage() {
           <h2>Orders</h2>
         </div>
         <div className="order-main">
-          <OrderTable datas={ordersValues} deleteValue={deleteOrderItem} />
+          <OrderTable datas={orderState} deleteValue={deleteOrderItem} />
         </div>
       </div>
       <ToastContainer />

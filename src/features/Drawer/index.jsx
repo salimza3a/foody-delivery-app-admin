@@ -19,12 +19,11 @@ function MainDrawer({ name, ...props }) {
         className={DrawerStyle.mainCanvas}
         placement="end"
       >
-        <Offcanvas.Header closeButton>
+        {/* closeButton */}
+        <Offcanvas.Header>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body closeButton variant="white">
-          {props.drawer}
-        </Offcanvas.Body>
+        <Offcanvas.Body variant="white">{props.drawer}</Offcanvas.Body>
       </Offcanvas>
     </>
   );

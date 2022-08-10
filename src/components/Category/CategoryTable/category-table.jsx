@@ -36,7 +36,6 @@ export default function CategoryTable({ data, deleteValue }) {
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
-  console.log(data, "X");
 
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);

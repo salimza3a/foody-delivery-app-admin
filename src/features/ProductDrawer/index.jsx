@@ -10,7 +10,7 @@ function AddProductDrawer() {
           <p>Upload your product image</p>
           <div className={ProductDrawerStyle.uploadFile}>
             <label htmlFor="file-input">
-              <img src={UploadIcon} />
+              <img src={UploadIcon} alt="" />
             </label>
             <input id="file-input" type="file" style={{ display: "none" }} />
 

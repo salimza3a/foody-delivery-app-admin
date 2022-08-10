@@ -7,15 +7,21 @@ import { deleteCategoryApi, getCategoryApi } from "../../api/category";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector, useDispatch } from "react-redux";
+import { setCategoryData } from "../../store/slice/categorySlice";
+
 function CategoryPage() {
-  const [categoryValues, setCategoryValues] = useState([]);
+  const categoryState = useSelector((state) => state.category.categoryData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getCategoryDatas();
   }, []);
 
   function getCategoryDatas() {
-    getCategoryApi.then((res) => setCategoryValues(res.data.category));
+    getCategoryApi.then((res) =>
+      dispatch(setCategoryData([...res.data.category]))
+    );
   }
 
   function deleteCategoryPost(id) {
@@ -31,8 +37,8 @@ function CategoryPage() {
       if (result.isConfirmed) {
         deleteCategoryApi(id).then((res) => {
           console.log(res, "res");
-          const newArr = categoryValues.filter((item) => item.id !== id);
-          setCategoryValues(newArr);
+          const newArr = categoryState.filter((item) => item.id !== id);
+          dispatch(setCategoryData(newArr));
           toast.success("deleted successfully", {
             position: "top-right",
             autoClose: 1500,
@@ -58,7 +64,7 @@ function CategoryPage() {
         </div>
         <div className="category-main">
           <CategoryTable
-            data={categoryValues}
+            data={categoryState}
             deleteValue={deleteCategoryPost}
           />
         </div>

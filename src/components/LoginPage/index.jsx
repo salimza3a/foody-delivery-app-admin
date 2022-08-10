@@ -8,11 +8,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogin } from "../../store/slice/loginSlice";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { VscEye, VscEyeClosed } from "react-icons/vsc";
 function LoginPage() {
   const login = useSelector((state) => state.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(login, "login");
+  const [showPassword, setShowPassword] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -80,20 +82,33 @@ function LoginPage() {
                       {formik.errors.username}
                     </span>
                   ) : null}
+                  <div className="d-flex justify-content-center">
+                    <input
+                      placeholder="Password"
+                      type={`${showPassword ? "text" : "password"}`}
+                      name="password"
+                      onChange={formik.handleChange}
+                      value={formik.values.password}
+                    />
+                    {
+                      <span
+                        className="display-4 m-1 text-light"
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
+                        {showPassword ? <VscEye /> : <VscEyeClosed />}
+                      </span>
+                    }
+                  </div>
 
-                  <input
-                    placeholder="Password"
-                    type="password"
-                    name="password"
-                    onChange={formik.handleChange}
-                    value={formik.values.password}
-                  />
                   {formik.touched.password && formik.errors.password ? (
                     <span className={LoginStyle.errorMessage}>
                       {formik.errors.password}
                     </span>
                   ) : null}
-                  <button type="submit"> sign in</button>
+                  <button className={LoginStyle.submitBtn} type="submit">
+                    {" "}
+                    sign in
+                  </button>
                 </form>
               </div>
             </div>

@@ -122,3 +122,10 @@
 .createBtn {
     background-color: #C035A2;
 }
+
+.errorAlert {
+    font-size: 18px;
+    color: orange;
+    font-weight: 600;
+    text-align: center;
+}

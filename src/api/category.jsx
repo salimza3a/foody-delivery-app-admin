@@ -10,6 +10,14 @@ mock.onGet("/category").reply((config) => {
   });
 });
 
+mock.onPost("/category").reply((config) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([201, { message: "Created" }, JSON.parse(config.data)]);
+    }, 2000);
+  });
+});
+
 mock.onDelete(/\/category\/\d+/).reply((config) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -20,4 +28,5 @@ mock.onDelete(/\/category\/\d+/).reply((config) => {
 
 export const getCategoryApi = axiosMock.get("/category");
 
+export const createCategoryApi = (item) => axiosMock.post(`/category`, item);
 export const deleteCategoryApi = (id) => axiosMock.delete(`/category/${id}`);

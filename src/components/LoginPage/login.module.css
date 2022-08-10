@@ -75,7 +75,9 @@ main {
 
 }
 
-.formElements button {
+
+
+.formElements .submitBtn {
     width: 100%;
     text-align: center;
     padding: 12px 0;
@@ -88,6 +90,8 @@ main {
     font-weight: 500;
 
 }
+
+
 
 
 

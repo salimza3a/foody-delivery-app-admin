@@ -9,19 +9,27 @@ import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CategoryOption from "../../utils/CategoryOption";
+
+import { useSelector, useDispatch } from "react-redux";
+
+import { setRestaurantData } from "../../store/slice/restaurantSlice";
 function RestaurantPage() {
-  const [restaurantData, setRestaurantData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(3);
 
+  const restaurantState = useSelector(
+    (state) => state.restaurant.restaurantData
+  );
+  const dispatch = useDispatch();
+  console.log(restaurantState, "restaurant state");
   useEffect(() => {
     getRestaurantsData();
   }, []);
 
   function getRestaurantsData() {
     getRestaurantsApi.then((res) => {
-      setRestaurantData(res.data.restaurants);
+      dispatch(setRestaurantData([...res.data.restaurants]));
     });
   }
 
@@ -37,8 +45,8 @@ function RestaurantPage() {
     }).then((result) => {
       if (result.isConfirmed) {
         deleteRestaurantsApi(id).then((res) => {
-          const newArr = restaurantData.filter((item) => item.id !== id);
-          setRestaurantData(newArr);
+          const newArr = restaurantState.filter((item) => item.id !== id);
+          dispatch(setRestaurantData(newArr));
         });
         toast.success("deleted successfully", {
           position: "top-right",
@@ -55,7 +63,7 @@ function RestaurantPage() {
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = restaurantData.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = restaurantState.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <>
@@ -87,7 +95,7 @@ function RestaurantPage() {
           {
             <Paginations
               postsPerPage={postsPerPage}
-              totalPosts={restaurantData.length}
+              totalPosts={restaurantState.length}
               paginate={paginate}
             />
           }
