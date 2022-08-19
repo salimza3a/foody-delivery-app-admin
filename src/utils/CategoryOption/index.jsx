@@ -1,13 +1,32 @@
 import "./category-style.css";
+import { useSelector } from "react-redux";
+import defaultCatalogData from "../../mocks/category/category.json";
+function CategoryOption({ optionName }) {
+  const state = useSelector((state) => state.category.categoryData);
+  let categoryName;
+  if (state.length === 0) {
+    categoryName = defaultCatalogData.map((item) => item.slug);
+  } else {
+    categoryName = state.map((item) => item.slug);
+  }
 
-function CategoryOption() {
+  const newArr = [...new Set(categoryName)];
+
   return (
-    <select className="productOption">
-      <option>Category type</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
+    <>
+      <select
+        className="productOption"
+        onChange={(e) => optionName(e.target.value)}
+      >
+        <option value="all">All Category</option>
+        {newArr.map((item, index) => (
+          <option key={index} value={item}>
+            {item}
+          </option>
+        ))}
+      </select>
+      ;
+    </>
   );
 }
 

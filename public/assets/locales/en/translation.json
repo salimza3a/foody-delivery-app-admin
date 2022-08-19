@@ -1,0 +1,100 @@
+{
+    "welcome_login": "Welcome Admin",
+    "login_username_placeholder": "Username",
+    "login_username_password": "Password",
+    "login_sign_in": "sign in",
+    "header": {
+        "add_product_button": "Add Product",
+        "admin_text": "Admin"
+    },
+    "sidebar": {
+        "sidebar_dashboard": "Dashboard",
+        "sidebar_products": "Products",
+        "sidebar_restaurants": "Restaurants",
+        "sidebar_category": "Category",
+        "sidebar_orders": "Orders",
+        "sidebar_offers": "Offer",
+        "sidebar_logout": "Logout"
+    },
+    "dashboard_page": {
+        "orders_title": "Orders ",
+        "assigned_risks_title": "Assigned Risks",
+        "assigned_risks_text": "There are no risks assigned",
+        "assigned_action_title": "Assigned Action Items",
+        "assigned_action_text": "There are no action items assigned"
+    },
+    "products_page": {
+        "header": {
+            "products_title": "Products"
+        },
+        "add_product_form": {
+            "add_product_title": "Add product",
+            "upload_product_text": "Upload your product image",
+            "upload_image_text": "upload",
+            "product_desc_text": "Add your Product description and necessary information",
+            "product_name": "Name",
+            "product_desc": "Description",
+            "product_price": "Price",
+            "product_restaurants": "Restaurants",
+            "product_cancel_btn": "Cancel",
+            "product_create_btn": "Create Product"
+        }
+    },
+    "restaurants_page": {
+        "header": {
+            "restaurants_title": "Restaurants",
+            "restaurants_button": "Add Restaurants"
+        },
+        "add_restaurant_form": {
+            "add_restaurant_title": "Add Restaurant",
+            "upload_restaurant_text": "Upload Image",
+            "upload_image_text": "upload",
+            "add_restaurant_info": "Add your Restaurants information",
+            "restaurant_name": "Name",
+            "restaurant_cuisine": "Cuisine",
+            "restaurant_delivery_price": "Delivery Price $",
+            "restaurant_delivery_time": "Delivery",
+            "restaurant_address": "Address",
+            "restaurant_category": "Category",
+            "restaurant_cancel_btn": "Cancel",
+            "restaurant_create_btn": "Create Restaurant"
+        }
+    },
+    "category_page": {
+        "header": {
+            "category_title": "Category",
+            "category_button": "Add Category"
+        },
+        "add_category_form": {
+            "add_category_title": "Add Category",
+            "upload_category_text": "Upload Image",
+            "upload_image_text": "upload",
+            "add_category_info": "Add your Category Information",
+            "category_name": "Name",
+            "category_slug": "Slug",
+            "category_cancel_btn": "Cancel",
+            "category_create_btn": "Create Category"
+        }
+    },
+    "orders_page": {
+        "header": {
+            "orders_title": "Orders"
+        }
+    },
+    "offers_page": {
+        "header": {
+            "offers_title": "Offers",
+            "offers_button": "Add Offer"
+        },
+        "add_offers_form": {
+            "add_offers_title": "Add Offer",
+            "upload_category_text": "Upload Image",
+            "upload_image_text": "upload",
+            "offer_info": "Add your Offer Information",
+            "offer_title": "Title",
+            "offer_desc": "Description",
+            "offer_cancel_btn": "Cancel",
+            "offer_create_btn": "Create Offer"
+        }
+    }
+}

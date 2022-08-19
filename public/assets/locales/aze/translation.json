@@ -1,0 +1,100 @@
+{
+    "welcome_login": "Xoşgəldin Admin",
+    "login_username_placeholder": "İstifadəçi adı",
+    "login_username_password": "Şifrə",
+    "login_sign_in": "Daxil ol",
+    "header": {
+        "add_product_button": "Məhsul Əlavə et",
+        "admin_text": "Admin"
+    },
+    "sidebar": {
+        "sidebar_dashboard": "İdarə paneli",
+        "sidebar_products": "Məhsullar",
+        "sidebar_restaurants": "Restoranlar",
+        "sidebar_category": "Kateqoriya",
+        "sidebar_orders": "Sifarişlər",
+        "sidebar_offers": "Təkliflər",
+        "sidebar_logout": "Çıxış"
+    },
+    "dashboard_page": {
+        "orders_title": "Sifarişlər",
+        "assigned_risks_title": "Təyin edilmiş risklər",
+        "assigned_risks_text": "Təyin edilmiş risklər yoxdur",
+        "assigned_action_title": "Təyin edilmiş Fəaliyyətlər",
+        "assigned_action_text": "Təyin edilmiş fəaliyyətlər yoxdur"
+    },
+    "products_page": {
+        "header": {
+            "products_title": "Məhsullar"
+        },
+        "add_product_form": {
+            "add_product_title": "Məhsul əlavə et",
+            "upload_product_text": "Məhsul şəklinizi yükləyin",
+            "upload_image_text": "yüklə",
+            "product_desc_text": "Məhsul təsvirinizi və lazımi məlumatları əlavə edin",
+            "product_name": "Ad",
+            "product_desc": "Təsvir",
+            "product_price": "Qiymət",
+            "product_restaurants": "Restoranlar",
+            "product_cancel_btn": "Ləğv et",
+            "product_create_btn": "Məhsul Yarat"
+        }
+    },
+    "restaurants_page": {
+        "header": {
+            "restaurants_title": "Restoranlar",
+            "restaurants_button": "Restoranlar Əlavə Et"
+        },
+        "add_restaurant_form": {
+            "add_restaurant_title": "Restoran əlavə et",
+            "upload_restaurant_text": "Şəkil yüklə",
+            "upload_image_text": "yüklə",
+            "add_restaurant_info": "Restoran məlumatlarınızı əlavə edin",
+            "restaurant_name": "Ad",
+            "restaurant_cuisine": "Mətbəx",
+            "restaurant_delivery_price": "Qiymət",
+            "restaurant_delivery_time": "Çatdırılma",
+            "restaurant_address": "Ünvan",
+            "restaurant_category": "Kateqoriya",
+            "restaurant_cancel_btn": "Ləğv et",
+            "restaurant_create_btn": "Restoran yarat"
+        }
+    },
+    "category_page": {
+        "header": {
+            "category_title": "Kateqoriya",
+            "category_button": "Kateqoriya Əlavə Et"
+        },
+        "add_category_form": {
+            "add_category_title": "Kateqoriya əlavə et",
+            "upload_category_text": "Şəkil yüklə",
+            "upload_image_text": "yüklə",
+            "add_category_info": "Kateqoriya məlumatlarınızı əlavə edin",
+            "category_name": "Ad",
+            "category_slug": "Slug",
+            "category_cancel_btn": "Ləğv et",
+            "category_create_btn": "Kateqoriya yarat"
+        }
+    },
+    "orders_page": {
+        "header": {
+            "orders_title": "Sifarişlər"
+        }
+    },
+    "offers_page": {
+        "header": {
+            "offers_title": "Təkliflər",
+            "offers_button": "Təklif əlavə et"
+        },
+        "add_offers_form": {
+            "add_offers_title": "Təklif əlavə et",
+            "upload_category_text": "Şəkil yüklə",
+            "upload_image_text": "yüklə",
+            "offer_info": "Təklif məlumatınızı əlavə edin",
+            "offer_title": "Başlıq",
+            "offer_desc": "Təsvir",
+            "offer_cancel_btn": "Ləğv et",
+            "offer_create_btn": "Təklif yarat"
+        }
+    }
+}

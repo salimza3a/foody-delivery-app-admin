@@ -8,7 +8,13 @@ mock.onGet("/restaurants").reply((config) => {
     }, 2000);
   });
 });
-
+mock.onPost("/restaurants").reply((config) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([201, { message: "Created" }, JSON.parse(config.data)]);
+    }, 2000);
+  });
+});
 mock.onDelete(/\/restaurants\/\d+/).reply((config) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -17,6 +23,7 @@ mock.onDelete(/\/restaurants\/\d+/).reply((config) => {
   });
 });
 export const getRestaurantsApi = axiosMock.get("/restaurants");
-
+export const createRestaurantsApi = (item) =>
+  axiosMock.post(`/restaurants`, item);
 export const deleteRestaurantsApi = (id) =>
   axiosMock.delete(`/restaurants/${id}`);

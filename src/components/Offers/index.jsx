@@ -8,11 +8,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 import { useSelector, useDispatch } from "react-redux";
-
 import { setOfferData } from "../../store/slice/offerSlice";
+import { useTranslation } from "react-i18next";
 function OfferPage() {
   const offerState = useSelector((state) => state.offer.offerData);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   useEffect(() => {
     getOffers();
@@ -54,9 +55,14 @@ function OfferPage() {
     <>
       <div className="offers-container">
         <div className="offers-header">
-          <h2>Offers</h2>
+          <h2>{t("offers_page.header.offers_title")}</h2>
           <span className="offer-btn">
-            {<MainDrawer name="Add Offer" drawer={<OffersDrawer />} />}
+            {
+              <MainDrawer
+                name={t("offers_page.header.offers_button")}
+                drawer={<OffersDrawer />}
+              />
+            }
           </span>
         </div>
 

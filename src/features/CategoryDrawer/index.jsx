@@ -6,15 +6,16 @@ import { setCategoryData } from "../../store/slice/categorySlice";
 import { useDispatch, useSelector } from "react-redux";
 import { createCategoryApi } from "../../api/category";
 import { useState } from "react";
+import * as Yup from "yup";
+import { useTranslation } from "react-i18next";
 function AddProductDrawer() {
   const state = useSelector((state) => state.category.categoryData);
   const dispatch = useDispatch();
-  console.log(state, "state param");
   const [image, setImage] = useState();
+  const { t } = useTranslation();
   function handleImage(e) {
     setImage(URL.createObjectURL(e.target.files[0]) || "");
     formik.values.image = URL.createObjectURL(e.target.files[0]) || "";
-    console.log(formik.values.image, "image");
 
     return formik.values.image;
   }
@@ -25,6 +26,12 @@ function AddProductDrawer() {
       name: "",
       slug: "",
     },
+    validationSchema: Yup.object().shape({
+      image: Yup.string().required("Required"),
+
+      name: Yup.string().required("Required"),
+      slug: Yup.string().required("Required"),
+    }),
 
     onSubmit: (values) => {
       let id = state.slice(-1)[0].id + 1;
@@ -38,19 +45,25 @@ function AddProductDrawer() {
         let newArr = [...state, item];
         dispatch(setCategoryData(newArr));
       });
+      formik.handleReset();
+      setImage(null);
     },
   });
 
   return (
     <>
       <div className={CategoryDrawer.formContainer}>
-        <h2>Add Category</h2>
-        <form onSubmit={formik.handleSubmit}>
+        <h2>{t("category_page.add_category_form.add_category_title")}</h2>
+        <Form onSubmit={formik.handleSubmit}>
           <div className={CategoryDrawer.uploadSection}>
-            <p>Upload image</p>
+            <p>{t("category_page.add_category_form.upload_category_text")}</p>
             <div className={CategoryDrawer.uploadFile}>
               <label htmlFor="file-input">
-                <img src={UploadIcon} alt="" />
+                {image ? (
+                  <img width={150} height={60} src={image} />
+                ) : (
+                  <img src={UploadIcon} alt="" />
+                )}
               </label>
               <input
                 id="file-input"
@@ -59,53 +72,58 @@ function AddProductDrawer() {
                 accept="image/*"
                 style={{ display: "none" }}
                 onChange={handleImage}
-                value={formik.values.image}
+                value={formik.values.image && ""}
               />
+              {/* search about value in above it doesn't work  */}
 
-              <p>upload</p>
+              <p className={image ? "d-none" : "d-block"}>
+                {t("category_page.add_category_form.upload_image_text")}
+              </p>
             </div>
           </div>
           <div className={CategoryDrawer.formSection}>
-            <h2>Add your Category Information</h2>
+            <h2>{t("category_page.add_category_form.add_category_info")}</h2>
             <div className={CategoryDrawer.formElements}>
-              <Form>
-                <Form.Group className="mb-3 ">
-                  <Form.Label className={CategoryDrawer.label}>Name</Form.Label>
-                  <Form.Control
-                    className={CategoryDrawer.inputStyle}
-                    type="text"
-                    placeholder="Soup"
-                    id="name"
-                    name="name"
-                    onChange={formik.handleChange}
-                    value={formik.values.name}
-                  />
-                </Form.Group>
+              <Form.Group className="mb-3 ">
+                <Form.Label className={CategoryDrawer.label}>
+                  {t("category_page.add_category_form.category_name")}
+                </Form.Label>
+                <Form.Control
+                  className={CategoryDrawer.inputStyle}
+                  type="text"
+                  placeholder="Soup"
+                  id="name"
+                  name="name"
+                  onChange={formik.handleChange}
+                  value={formik.values.name}
+                />
+              </Form.Group>
 
-                <Form.Group className="mb-3 ">
-                  <Form.Label className={CategoryDrawer.label}>Slug</Form.Label>
-                  <Form.Control
-                    className={CategoryDrawer.inputStyle}
-                    type="text"
-                    placeholder="yummy-soup"
-                    id="slug"
-                    name="slug"
-                    onChange={formik.handleChange}
-                    value={formik.values.slug}
-                  />
-                </Form.Group>
-              </Form>
+              <Form.Group className="mb-3 ">
+                <Form.Label className={CategoryDrawer.label}>
+                  {t("category_page.add_category_form.category_slug")}
+                </Form.Label>
+                <Form.Control
+                  className={CategoryDrawer.inputStyle}
+                  type="text"
+                  placeholder="yummy-soup"
+                  id="slug"
+                  name="slug"
+                  onChange={formik.handleChange}
+                  value={formik.values.slug}
+                />
+              </Form.Group>
             </div>
           </div>
           <div className={CategoryDrawer.actionButtons}>
             <button type="button" className={CategoryDrawer.cancelBtn}>
-              Cancel
+              {t("category_page.add_category_form.category_cancel_btn")}
             </button>
             <button type="submit" className={CategoryDrawer.createBtn}>
-              Create Product
+              {t("category_page.add_category_form.category_create_btn")}
             </button>
           </div>
-        </form>
+        </Form>
       </div>
     </>
   );

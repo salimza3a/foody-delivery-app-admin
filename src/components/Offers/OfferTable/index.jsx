@@ -60,7 +60,7 @@ export default function OffersTable({ data, deleteValue }) {
                     </TableCell>
                     <TableCell className="cell-style" key={uuidv4()}>
                       <img
-                        src={row.image_url}
+                        src={row.image}
                         alt=""
                         width={50}
                         height={50}

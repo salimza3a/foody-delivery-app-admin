@@ -1,13 +1,13 @@
 [
     {
         "id": 1023,
-        "image_url": "https://post.healthline.com/wp-content/uploads/2020/09/healthy-eating-ingredients-732x549-thumbnail.jpg",
+        "image": "https://post.healthline.com/wp-content/uploads/2020/09/healthy-eating-ingredients-732x549-thumbnail.jpg",
         "title": "Do you like Pizza at Papa John's ",
         "descriptions": "Lorem ipsum dolor sit ametmLorem ipsum dolor sit amet"
     },
     {
         "id": 1024,
-        "image_url": "https://post.healthline.com/wp-content/uploads/2020/09/healthy-eating-ingredients-732x549-thumbnail.jpg",
+        "image": "https://post.healthline.com/wp-content/uploads/2020/09/healthy-eating-ingredients-732x549-thumbnail.jpg",
         "title": "Do you like Hamburger at MacDonald's ",
         "descriptions": "Lorem ipsum dolor sit amet"
     }

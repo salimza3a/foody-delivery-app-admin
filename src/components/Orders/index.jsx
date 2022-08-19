@@ -8,9 +8,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { setOrdersData } from "../../store/slice/orderSlice";
+import { useTranslation } from "react-i18next";
 function OrderPage() {
   const orderState = useSelector((state) => state.order.ordersData);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   useEffect(() => {
     getOrders();
   }, []);
@@ -51,7 +53,7 @@ function OrderPage() {
     <>
       <div className="order-container">
         <div className="order-header">
-          <h2>Orders</h2>
+          <h2>{t("orders_page.header.orders_title")}</h2>
         </div>
         <div className="order-main">
           <OrderTable datas={orderState} deleteValue={deleteOrderItem} />

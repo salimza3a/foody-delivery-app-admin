@@ -9,11 +9,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
 import { setCategoryData } from "../../store/slice/categorySlice";
-
+import { useTranslation } from "react-i18next";
 function CategoryPage() {
   const categoryState = useSelector((state) => state.category.categoryData);
   const dispatch = useDispatch();
 
+  const { t } = useTranslation();
   useEffect(() => {
     getCategoryDatas();
   }, []);
@@ -57,9 +58,14 @@ function CategoryPage() {
     <>
       <div className="category-container">
         <div className="category-header">
-          <h2>Category</h2>
+          <h2>{t("category_page.header.category_title")}</h2>
           <span className="add-category-btn">
-            {<MainDrawer name="Add Category" drawer={<CategoryDrawer />} />}
+            {
+              <MainDrawer
+                name={t("category_page.header.category_button")}
+                drawer={<CategoryDrawer />}
+              />
+            }
           </span>
         </div>
         <div className="category-main">

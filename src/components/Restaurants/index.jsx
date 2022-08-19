@@ -9,20 +9,22 @@ import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CategoryOption from "../../utils/CategoryOption";
-
 import { useSelector, useDispatch } from "react-redux";
+import {
+  filterRestaurantData,
+  setRestaurantData,
+} from "../../store/slice/restaurantSlice";
 
-import { setRestaurantData } from "../../store/slice/restaurantSlice";
+import { useTranslation } from "react-i18next";
 function RestaurantPage() {
   // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(3);
-
+  const [postsPerPage] = useState(5);
+  const { t } = useTranslation();
   const restaurantState = useSelector(
     (state) => state.restaurant.restaurantData
   );
   const dispatch = useDispatch();
-  console.log(restaurantState, "restaurant state");
   useEffect(() => {
     getRestaurantsData();
   }, []);
@@ -60,6 +62,10 @@ function RestaurantPage() {
       }
     });
   }
+  function getCategoryName(arg) {
+    const newArr = restaurantState.filter((item) => item.category === arg);
+    dispatch(filterRestaurantData(newArr));
+  }
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -69,13 +75,13 @@ function RestaurantPage() {
     <>
       <div className="restaurant-container">
         <div className="restaurant-header">
-          <h2>Restaurants</h2>
+          <h2>{t("restaurants_page.header.restaurants_title")}</h2>
           <div className="right-side-items">
-            <CategoryOption />
+            <CategoryOption optionName={getCategoryName} />
             <span>
               {
                 <MainDrawer
-                  name="Add Restaurants"
+                  name={t("restaurants_page.header.restaurants_button")}
                   drawer={<RestaurantDrawer />}
                 />
               }

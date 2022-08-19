@@ -10,7 +10,10 @@ import { setLogin } from "../../store/slice/loginSlice";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import Dropdowns from "../../utils/Dropdowns";
+import { useTranslation } from "react-i18next";
 function LoginPage() {
+  const { t } = useTranslation();
   const login = useSelector((state) => state.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -68,11 +71,11 @@ function LoginPage() {
           <div className={LoginStyle.formContainer}>
             <div className={LoginStyle.formInputContainer}>
               <div className={LoginStyle.formElements}>
-                <h2>Welcome Admin</h2>
+                <h2>{t("welcome_login")}</h2>
                 <form onSubmit={formik.handleSubmit}>
                   <input
                     name="username"
-                    placeholder="Username"
+                    placeholder={t("login_username_placeholder")}
                     type="text"
                     onChange={formik.handleChange}
                     value={formik.values.username}
@@ -84,7 +87,7 @@ function LoginPage() {
                   ) : null}
                   <div className="d-flex justify-content-center">
                     <input
-                      placeholder="Password"
+                      placeholder={t("login_username_password")}
                       type={`${showPassword ? "text" : "password"}`}
                       name="password"
                       onChange={formik.handleChange}
@@ -107,19 +110,14 @@ function LoginPage() {
                   ) : null}
                   <button className={LoginStyle.submitBtn} type="submit">
                     {" "}
-                    sign in
+                    {t("login_sign_in")}
                   </button>
                 </form>
               </div>
             </div>
             <div className={LoginStyle.formImageContainer}>
               <div className={LoginStyle.languageButton}>
-                <img
-                  src="https://toppng.com/uploads/preview/olf-flag-with-pole-vector-golf-flag-icon-11562881002ezceap6bqe.png"
-                  width={50}
-                  height={50}
-                  alt=""
-                />
+                <Dropdowns />
               </div>
               <div className={LoginStyle.formImage}>
                 <img src={FormImage} alt="" />

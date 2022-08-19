@@ -12,40 +12,38 @@ import MainDrawer from "../../features/Drawer";
 import AddProductDrawer from "../../features/ProductDrawer";
 import { NavLink, Routes, Route, Outlet } from "react-router-dom";
 import DashBoardPage from "../Dashboard";
-import ProductsPage from "../ProductPage";
 import CategoryPage from "../Category";
 import RestaurantPage from "../Restaurants";
 import OrderPage from "../Orders";
 import OfferPage from "../Offers";
-import LoginPage from "../LoginPage";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "../../store/slice/loginSlice";
 import ProductPage from "../ProductPage";
-import ErrorPage from "../../error";
-import { useEffect, useState } from "react";
+import Dropdowns from "../../utils/Dropdowns";
+import { useTranslation } from "react-i18next";
 
+// const [auth, setAuth] = useState([]);
+
+// useEffect(() => {
+//   setAuth(localStorage.getItem("isLogin"));
+// }, []);
+// const login = useSelector((state) => state.login);
+// if (login.isLogin || auth === true) {
+//   <AdminPanel />;
+// } else {
+//   logOutUser();
+// }
 function AdminPanel(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const { t } = useTranslation();
   function logOutUser() {
     localStorage.removeItem("isLogin");
     dispatch(setLogin(false));
     navigate("/login");
   }
-
-  // const [auth, setAuth] = useState([]);
-
-  // useEffect(() => {
-  //   setAuth(localStorage.getItem("isLogin"));
-  // }, []);
-  // const login = useSelector((state) => state.login);
-  // if (login.isLogin || auth === true) {
-  //   <AdminPanel />;
-  // } else {
-  //   logOutUser();
-  // }
   return (
     <>
       <div className={AdminStyle.container}>
@@ -55,22 +53,18 @@ function AdminPanel(props) {
           </div>
           <div className={AdminStyle.otherHeaderElements}>
             <span className={AdminStyle.addProduct}>
-              <MainDrawer drawer={<AddProductDrawer />} name="Add Product" />
+              <MainDrawer
+                drawer={<AddProductDrawer />}
+                name={t("header.add_product_button")}
+              />
             </span>
             {/* Language section */}
-            <button
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: "50%",
-                border: "transparent",
-              }}
-            >
-              lang
-            </button>
+            <span className="mt-2">{<Dropdowns />}</span>
             <div style={{ display: "flex", alignItems: "center" }}>
               <img src={Avatar} alt="" className={AdminStyle.avatar} />
-              <span className={AdminStyle.adminText}>Admin</span>
+              <span className={AdminStyle.adminText}>
+                {t("header.admin_text")}
+              </span>
             </div>
           </div>
         </div>
@@ -83,28 +77,28 @@ function AdminPanel(props) {
                     <li>
                       <img src={Dashboard} alt="dashboard link" />
                       <NavLink className="nav-link" to="/admin/dashboard">
-                        Dashboard{" "}
+                        {t("sidebar.sidebar_dashboard")}{" "}
                       </NavLink>
                     </li>
                     <li>
                       {" "}
                       <img src={Products} alt="products link" />
                       <NavLink className="nav-link" to="/admin/products">
-                        Products{" "}
+                        {t("sidebar.sidebar_products")}{" "}
                       </NavLink>
                     </li>
                     <li>
                       {" "}
                       <img src={Restaurants} alt="restaurants link" />{" "}
                       <NavLink className="nav-link" to="/admin/restaurants">
-                        Restaurants{" "}
+                        {t("sidebar.sidebar_restaurants")}{" "}
                       </NavLink>
                     </li>
                     <li>
                       {" "}
                       <img src={Category} alt="category link" />{" "}
                       <NavLink className="nav-link" to="/admin/category">
-                        Category{" "}
+                        {t("sidebar.sidebar_category")}{" "}
                       </NavLink>
                     </li>
                     <li>
@@ -112,14 +106,14 @@ function AdminPanel(props) {
                       <img src={Orders} alt="orders link" />{" "}
                       <NavLink className="nav-link" to="/admin/orders">
                         {" "}
-                        Orders{" "}
+                        {t("sidebar.sidebar_orders")}{" "}
                       </NavLink>
                     </li>
                     <li>
                       {" "}
                       <img src={Offer} alt="offer link" />{" "}
                       <NavLink className="nav-link" to="/admin/offer">
-                        Offer{" "}
+                        {t("sidebar.sidebar_offers")}{" "}
                       </NavLink>
                     </li>
                     <li>
@@ -129,7 +123,7 @@ function AdminPanel(props) {
                         className={AdminStyle.logOutBtn}
                         onClick={() => logOutUser()}
                       >
-                        Logout{" "}
+                        {t("sidebar.sidebar_logout")}{" "}
                       </button>
                     </li>
                   </ul>
@@ -142,14 +136,6 @@ function AdminPanel(props) {
           </div>
           <div className={AdminStyle.content}>
             <Outlet />
-            <Routes>
-              <Route path="/admin/dashboard" element={<DashBoardPage />} />
-              <Route path="/admin/products" element={<ProductPage />} />
-              <Route path="/admin/restaurants" element={<RestaurantPage />} />
-              <Route path="/admin/category" element={<CategoryPage />} />
-              <Route path="/admin/orders" element={<OrderPage />} />
-              <Route path="/admin/offer" element={<OfferPage />} />
-            </Routes>
           </div>
         </div>
       </div>

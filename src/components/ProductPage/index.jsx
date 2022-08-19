@@ -10,14 +10,13 @@ import "react-toastify/dist/ReactToastify.css";
 import CategoryOption from "../../utils/CategoryOption";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductDatas } from "../../store/slice/productSlice";
+import { useTranslation } from "react-i18next";
 function ProductPage() {
-  // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
-
+  const { t } = useTranslation();
   const productState = useSelector((state) => state.product.productDatas);
   const dispatch = useDispatch();
-  console.log(productState, "state");
 
   useEffect(() => {
     getProducts();
@@ -60,6 +59,13 @@ function ProductPage() {
     });
   }
 
+  function getCategoryName(param) {
+    console.log(param);
+    const newArr = [...productState].filter((item) => item.category === param);
+    dispatch(setProductDatas(newArr));
+    console.log(newArr, "new arr");
+  }
+
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -70,8 +76,8 @@ function ProductPage() {
     <>
       <div className="productContainer">
         <div className="productHeader">
-          <h2>Products</h2>
-          <CategoryOption />
+          <h2>{t("products_page.header.products_title")}</h2>
+          <CategoryOption optionName={getCategoryName} />
         </div>
         <div className="productMain">
           {currentPosts?.map((product) => (
